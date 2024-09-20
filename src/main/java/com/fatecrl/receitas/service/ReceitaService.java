@@ -11,16 +11,19 @@ import com.fatecrl.receitas.model.Receita;
 public class ReceitaService {
     private static List<Receita> receitas = new ArrayList<Receita>();
 
-    public ReceitaService(){
-        receitaFake();
+    private void receitaFake(){
+        Receita receitaFake = new Receita();
+        receitaFake.setId(1L);
+        receitaFake.setNome("Bolo de Chocolate");
+        String[] lista = ("Ovos", "Acuçar", "Leite", "Chocolate em Pó");
+        receitaFake.getIngredientes(List.of(lista));
+        receitaFake.getInstrucoes("");
+        receitas.add(receitaFake)
+        
     }
 
-    private void receitaFake(){
-        Receita receita = new Receita();
-        receita.setNome("Bolo de Chocolate");
-        receita.setId(0);
-        receita.setIngredientes("Leite, Ovos, Chocolate em pó e açucar");
-        receitas.add(receita);
+    public ReceitaService(){
+        receitaFake();
     }
 
     public List<Receita> findAll(){
