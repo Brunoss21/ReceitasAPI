@@ -1,0 +1,7 @@
+spring:
+    application:
+        name: receita
+server:
+    servlet:
+        contextPath: /api
+    port: 8090
